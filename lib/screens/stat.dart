@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widget.dart';
 import '../main.dart';
+import 'package:cricket_app/homepage.dart';
 
 class odi extends StatefulWidget {
   var statsdata;
@@ -21,33 +22,42 @@ class _odiState extends State<odi> {
   _odiState({required this.statsdata, required this.odis, required this.bat});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Center(child: Text('ICC $odis $bat Ranking')),
-      ),
-      body: Column(children: [
-        headings(),
-        SizedBox(
-          height: 613,
-          child: ListView.builder(
-              itemCount: 9,
-              itemBuilder: (content, index) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    SizedBox(
-                      height: 10,
-                    ),
-                    info(
-                        name: statsdata['rank'][index]['name'],
-                        point: statsdata['rank'][index]['points'],
-                        rank: statsdata['rank'][index]['rank'],
-                        country: statsdata['rank'][index]['country']),
-                  ],
-                );
-              }),
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Home()),
+        );
+        return false;
+      },
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Center(child: Text('ICC $odis $bat Ranking')),
         ),
-      ]),
+        body: Column(children: [
+          headings(),
+          Expanded(
+            child: ListView.builder(
+                itemCount: 15,
+                itemBuilder: (content, index) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      info(
+                          name: statsdata['rank'][index]['name'],
+                          point: statsdata['rank'][index]['points'],
+                          rank: statsdata['rank'][index]['rank'],
+                          country: statsdata['rank'][index]['country']),
+                    ],
+                  );
+                }),
+          ),
+        ]),
+      ),
     );
   }
 }

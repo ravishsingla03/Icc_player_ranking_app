@@ -51,9 +51,7 @@ class _infoState extends State<info> {
         children: [
           Expanded(
             child: Padding(
-              
-              padding: const EdgeInsets.symmetric(horizontal: 18)
-              ,
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                 rank.toString(),
                 style: TextStyle(
