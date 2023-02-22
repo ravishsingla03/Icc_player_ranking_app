@@ -9,8 +9,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  String type = '';
-  String tyep1 = '';
+  String type = 'odi';
+  String tyep1 = 'batsmen';
   Color cl1 = Colors.white;
   Color cl2 = Colors.white;
   Color cl3 = Colors.white;
@@ -24,6 +24,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
         appBar: AppBar(
           title: Center(child: Text('ICC Ranking')),
+          automaticallyImplyLeading: false,
         ),
         body: Container(
           child: Column(
@@ -49,7 +50,7 @@ class _HomeState extends State<Home> {
                           border: Border.all(color: Colors.white),
                         ),
                         child: Center(
-                          child: Text('Odi',
+                          child: Text('ODI',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontSize: 20.0,

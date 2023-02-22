@@ -24,10 +24,7 @@ class _odiState extends State<odi> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Home()),
-        );
+        Navigator.pushNamed(context, '/');
         return false;
       },
       child: Scaffold(
@@ -39,7 +36,7 @@ class _odiState extends State<odi> {
           headings(),
           Expanded(
             child: ListView.builder(
-                itemCount: 15,
+                itemCount: 10,
                 itemBuilder: (content, index) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
