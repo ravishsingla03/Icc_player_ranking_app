@@ -9,10 +9,7 @@ class odi extends StatefulWidget {
   String bat;
   odi({required this.statsdata, required this.odis, required this.bat});
   @override
-  State<odi> createState() => _odiState(
-      statsdata: statsdata,
-      odis: odis.toUpperCase(),
-      bat: bat[0].toUpperCase() + bat.substring(1));
+  State<odi> createState() => _odiState( statsdata: statsdata,odis: odis.toUpperCase(),bat: bat[0].toUpperCase() + bat.substring(1));
 }
 
 class _odiState extends State<odi> {

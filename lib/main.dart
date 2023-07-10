@@ -1,4 +1,5 @@
 import 'package:cricket_app/homepage.dart';
+import 'package:cricket_app/screens/news.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => Home(),
+          '/news': (context) => cricNews(),
         });
   }
 }

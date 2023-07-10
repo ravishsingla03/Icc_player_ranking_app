@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 String type = 'odi';
 String type1 = 'batsmen';
 
-
 class Networkhelper {
   Networkhelper(this.url);
   final String url;
@@ -40,3 +39,20 @@ class Networkhelper {
 //     }
 //   }
 // }
+
+class CricNews {
+  Future getnews() async {
+    try {
+      Map<String, String> requestheader = {
+        'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com',
+        'x-rapidapi-key': '761f66760amsh9929a36edf04652p1e805cjsn7a0f60ddf3f7'
+      };
+      var url =
+          Uri.parse('https://cricbuzz-cricket.p.rapidapi.com/news/v1/index');
+      var response = await http.get(url,headers: requestheader);
+      return jsonDecode(response.body);
+    } catch (e) {
+      print(e);
+    }
+  }
+}
