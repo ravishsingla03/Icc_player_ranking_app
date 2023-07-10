@@ -40,7 +40,8 @@ class _HomeState extends State<Home> {
                 },
                 icon: Icon(Icons.article_outlined))
           ],
-          title: Center(child: Text('ICC Ranking')),
+          title: Text('ICC Ranking'),
+          centerTitle: true,
           automaticallyImplyLeading: false,
         ),
         body: Column(
