@@ -24,21 +24,23 @@ The Cricket Ranking App is a mobile application designed to provide users with c
 2. Open the project in your preferred integrated development environment (IDE).
 
 3. Install the necessary dependencies by running the following command in the terminal:
-
+    ```
+    flutter pub get
+    ```
 
 4. Set up the required API keys and credentials for accessing cricket news sources and ChatGPT. Consult the documentation or configuration files provided for detailed instructions.
 
 5. Build the project by running the appropriate command for your development environment:
 
-- For Android:
-  ```
-  react-native run-android
-  ```
+    - Android:
+        ```
+        flutter build apk
+        ```
 
-- For iOS:
-  ```
-  react-native run-ios
-  ```
+    - iOS:
+        ```
+        flutter build ios
+        ```
 
 6. The app will be installed and launched on your mobile device or emulator.
 
