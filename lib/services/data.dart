@@ -49,7 +49,32 @@ class CricNews {
       };
       var url =
           Uri.parse('https://cricbuzz-cricket.p.rapidapi.com/news/v1/index');
-      var response = await http.get(url,headers: requestheader);
+      var response = await http.get(url, headers: requestheader);
+      return jsonDecode(response.body);
+    } catch (e) {
+      print(e);
+    }
+  }
+}
+
+class teamsrank {
+  Future getdata(int index) async {
+    String r = "test";
+    if (index == 0) {
+      r = 'test';
+    } else if (index == 1) {
+      r = 'odi';
+    } else{
+      r = 't20';
+    }
+    try {
+      Map<String, String> requestheader = {
+        'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com',
+        'x-rapidapi-key': '9c4037cdb4msh732f412a7d948a4p163356jsneb47f29d79c5'
+      };
+      var ur = Uri.parse(
+          'https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/teams?formatType=${r}');
+      var response = await http.get(ur, headers: requestheader);
       return jsonDecode(response.body);
     } catch (e) {
       print(e);

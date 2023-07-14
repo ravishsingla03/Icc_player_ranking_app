@@ -105,10 +105,6 @@ class _infoState extends State<info> {
 }
 
 class headings extends StatelessWidget {
-  const headings({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -119,7 +115,7 @@ class headings extends StatelessWidget {
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+        children: const [
           SizedBox(
             width: 10,
           ),
@@ -150,6 +146,80 @@ class headings extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class Headings2 extends StatelessWidget {
+  const Headings2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            Text(
+              "Rank",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+            Text("Country",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            Text("Points",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            Text("Matches",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Teamdatabox extends StatefulWidget {
+  var teamdata;
+  Teamdatabox({required this.teamdata});
+
+  @override
+  State<Teamdatabox> createState() => _TeamdataboxState();
+}
+
+class _TeamdataboxState extends State<Teamdatabox> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              widget.teamdata['rank'].toString(),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+            Text(widget.teamdata['name'],
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            Text(widget.teamdata['points'].toString(),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            Text(widget.teamdata['matches'].toString(),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+          ],
+        ),
       ),
     );
   }

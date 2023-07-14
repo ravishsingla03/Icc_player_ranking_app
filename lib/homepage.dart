@@ -1,4 +1,6 @@
 import 'package:cricket_app/screens/loading%20screen.dart';
+import 'package:cricket_app/screens/teamranking.dart';
+import 'package:cricket_app/services/data.dart';
 import 'package:flutter/material.dart';
 import 'package:cricket_app/screens/chatscreen.dart';
 
@@ -232,6 +234,30 @@ class _HomeState extends State<Home> {
                 ),
                 child: Center(
                   child: Text('Get Ranking',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 20.0, color: cl7, fontFamily: 'Raleway')),
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => loadingTeamRank(),
+                  ),
+                );
+              },
+              child: Container(
+                height: 50,
+                width: 250,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(color: Colors.white),
+                ),
+                child: Center(
+                  child: Text('Teams Ranking',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 20.0, color: cl7, fontFamily: 'Raleway')),
