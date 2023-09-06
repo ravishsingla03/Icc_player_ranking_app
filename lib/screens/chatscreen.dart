@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 //chatscreen.dart
 
 class APIKey {
-  static const apiKey = "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";
+  static const apiKey = "put your key here";
 }
 
 class chat extends StatefulWidget {
