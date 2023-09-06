@@ -12,7 +12,7 @@ class Networkhelper {
     try {
       Map<String, String> requestheader = {
         'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com',
-        'x-rapidapi-key': '9c4037cdb4msh732f412a7d948a4p163356jsneb47f29d79c5'
+        'x-rapidapi-key': 'put your key here'
       };
       var ur = Uri.parse(url);
       var response = await http.get(ur, headers: requestheader);
@@ -28,7 +28,7 @@ class Networkhelper {
 //     try {
 //       Map<String, String> requestheader = {
 //         'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com',
-//         'x-rapidapi-key': '9c4037cdb4msh732f412a7d948a4p163356jsneb47f29d79c5'
+//         'x-rapidapi-key': 'put your key here'
 //       };
 //       var ur = Uri.parse(
 //           "https://cricbuzz-cricket.p.rapidapi.com/img/v1/i1/c244980/i.jpg");
@@ -45,7 +45,7 @@ class CricNews {
     try {
       Map<String, String> requestheader = {
         'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com',
-        'x-rapidapi-key': '761f66760amsh9929a36edf04652p1e805cjsn7a0f60ddf3f7'
+        'x-rapidapi-key': 'put your key here'
       };
       var url =
           Uri.parse('https://cricbuzz-cricket.p.rapidapi.com/news/v1/index');
@@ -70,7 +70,7 @@ class teamsrank {
     try {
       Map<String, String> requestheader = {
         'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com',
-        'x-rapidapi-key': '9c4037cdb4msh732f412a7d948a4p163356jsneb47f29d79c5'
+        'x-rapidapi-key': 'put your key here'
       };
       var ur = Uri.parse(
           'https://cricbuzz-cricket.p.rapidapi.com/stats/v1/rankings/teams?formatType=${r}');
